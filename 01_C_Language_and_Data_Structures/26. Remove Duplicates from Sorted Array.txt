@@ -1,0 +1,18 @@
+int removeDuplicates(int* nums, int numsSize) {
+    
+    int i=0;
+    while(i<numsSize-1){
+        int counts = 0;
+        if(nums[i] == nums[i+1]){
+            
+            counts++;
+            for(int j=i+1; j<numsSize-1;j++){
+                nums[j] = nums[j+1];
+            }
+            numsSize -= counts;
+        }
+        else i++;
+    }
+   
+    return numsSize;
+}
